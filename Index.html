@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StitchMatch - Where Garment Skills Meet Opportunity</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#8B7355'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Modern%20garment%20workshop%20with%20sewing%20machines%20and%20fabric%20rolls%20in%20soft%20natural%20lighting%2C%20beige%20and%20blue%20color%20palette%2C%20professional%20textile%20manufacturing%20environment%20with%20skilled%20workers%20crafting%20quality%20garments%2C%20clean%20minimalist%20background%20with%20fabric%20textures&width=1920&height=1080&seq=hero1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .fabric-texture {
+            background-image: url('https://readdy.ai/api/search-image?query=Subtle%20beige%20fabric%20texture%20with%20delicate%20thread%20patterns%2C%20soft%20cotton%20weave%20background%2C%20minimal%20and%20clean%20textile%20surface%20for%20web%20design&width=800&height=600&seq=texture1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                    </div>
+                     <img src="Images/Logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">StitchMatch</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="Index.html" class="text-primary font-medium transition-colors">Home</a>
+                    <a href="CreateProfile.html" class="text-gray-700 hover:text-primary transition-colors">Find Work</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Hire Talent</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Features</a>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <a href="Signin.html"><button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">Sign In</button></a>
+                    <a href="CreateProfile.html"><button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">Get Started</button></a>
+                </div>
+                
+                <div class="md:hidden">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+        <div class="relative w-full px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-7xl mx-auto">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+                        Where garment skills meet 
+                        <span class="text-primary">opportunity</span>
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                        Connect talented garment workers with factories, workshops, and brands. Build your career or find skilled professionals in the textile industry.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="CreateProfile.html"> <button class="bg-primary text-white px-8 py-4 !rounded-button text-lg font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap flex items-center justify-center gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-search-line"></i>
+                            </div>
+                            Find Work
+                        </button></a>
+                        <button class="bg-secondary text-white px-8 py-4 !rounded-button text-lg font-semibold hover:bg-amber-700 transition-colors whitespace-nowrap flex items-center justify-center gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-team-line"></i>
+                            </div>
+                            Hire Talent
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-8 text-sm text-gray-600">
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-shield-check-line text-green-600"></i>
+                            </div>
+                            <span>Verified Profiles</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-time-line text-blue-600"></i>
+                            </div>
+                            <span>Quick Hiring</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-global-line text-purple-600"></i>
+                            </div>
+                            <span>Multilingual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Platform Overview -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Connecting Garment Makers with Opportunities</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    StitchMatch bridges the gap between skilled garment workers and employers, creating a trusted marketplace where talent meets opportunity in the textile industry.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://readdy.ai/api/search-image?query=Skilled%20female%20tailor%20working%20on%20sewing%20machine%20in%20modern%20workshop%2C%20focused%20on%20crafting%20quality%20garment%2C%20professional%20textile%20work%20environment%20with%20natural%20lighting%20and%20fabric%20materials&width=600&height=400&seq=worker1&orientation=landscape" 
+                         alt="Skilled garment worker" class="w-full h-80 object-cover object-top rounded-xl shadow-lg">
+                </div>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-xl">
+                            <i class="ri-user-star-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Verified Skill Profiles</h3>
+                            <p class="text-gray-600">Workers showcase their expertise with verified portfolios, certifications, and peer reviews.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-xl">
+                            <i class="ri-map-pin-line text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Location-Based Matching</h3>
+                            <p class="text-gray-600">Find opportunities near you or discover talent in specific regions with smart location filtering.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-xl">
+                            <i class="ri-translate-2 text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Multilingual Support</h3>
+                            <p class="text-gray-600">Platform available in English, Tamil, Hindi, and Bengali to serve diverse communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Workers Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 fabric-texture">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Showcase your craft, build your career</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Create a professional profile that highlights your skills, experience, and craftsmanship. Connect with employers who value your expertise.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full">
+                                <i class="ri-camera-line text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Upload photos and videos of your work</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full">
+                                <i class="ri-medal-line text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Earn skill badges and certifications</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full">
+                                <i class="ri-notification-line text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Get notified of matching job opportunities</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full">
+                                <i class="ri-star-line text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Build your reputation through ratings</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">English</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">தமிழ்</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">हिंदी</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">বাংলা</span>
+                    </div>
+                    
+                    <a href="CreateProfile.html"><button class="bg-primary text-white px-8 py-3 !rounded-button text-lg font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap">
+                        Create Worker Profile
+                    </button></a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://readdy.ai/api/search-image?query=Professional%20embroidery%20work%20close-up%20showing%20intricate%20stitching%20patterns%20on%20fabric%2C%20skilled%20handcraft%20detail%20with%20colorful%20threads%20and%20precise%20needlework&width=300&height=400&seq=craft1&orientation=portrait" 
+                         alt="Embroidery work" class="w-full h-48 object-cover object-top rounded-lg shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=Sewing%20machine%20operator%20working%20on%20garment%20construction%2C%20professional%20stitching%20process%20in%20textile%20workshop%20with%20quality%20fabric%20materials&width=300&height=400&seq=craft2&orientation=portrait" 
+                         alt="Sewing work" class="w-full h-48 object-cover object-top rounded-lg shadow-md mt-8">
+                    <img src="https://readdy.ai/api/search-image?query=Fabric%20cutting%20process%20with%20precision%20tools%2C%20skilled%20cutter%20working%20on%20pattern%20layout%20in%20garment%20manufacturing%20workshop&width=300&height=400&seq=craft3&orientation=portrait" 
+                         alt="Cutting work" class="w-full h-48 object-cover object-top rounded-lg shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=Garment%20finishing%20work%20showing%20quality%20control%20and%20final%20touches%20on%20completed%20clothing%20item%20in%20professional%20textile%20environment&width=300&height=400&seq=craft4&orientation=portrait" 
+                         alt="Finishing work" class="w-full h-48 object-cover object-top rounded-lg shadow-md mt-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Employers Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://readdy.ai/api/search-image?query=Modern%20garment%20factory%20floor%20with%20multiple%20sewing%20stations%20and%20professional%20workers%2C%20clean%20industrial%20textile%20manufacturing%20environment%20with%20organized%20workflow&width=600&height=400&seq=factory1&orientation=landscape" 
+                         alt="Garment factory" class="w-full h-80 object-cover object-top rounded-xl shadow-lg">
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Find verified garment workers fast</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Access a pool of skilled, verified garment workers. Post jobs, review portfolios, and hire the right talent for your production needs.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-xl">
+                                <i class="ri-file-list-3-line text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Post Job Requirements</h3>
+                                <p class="text-gray-600 text-sm">Specify skills, experience level, and project details</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-xl">
+                                <i class="ri-filter-3-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Advanced Filtering</h3>
+                                <p class="text-gray-600 text-sm">Filter by skill, location, rating, and availability</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-orange-100 rounded-xl">
+                                <i class="ri-star-smile-line text-orange-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">View Ratings & Reviews</h3>
+                                <p class="text-gray-600 text-sm">See verified feedback from previous employers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-xl">
+                                <i class="ri-message-3-line text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Direct Communication</h3>
+                                <p class="text-gray-600 text-sm">Message and hire workers directly through the platform</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-secondary text-white px-8 py-3 !rounded-button text-lg font-semibold hover:bg-amber-700 transition-colors whitespace-nowrap">
+                        Start Hiring Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">How StitchMatch Works</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Simple steps to connect skilled garment workers with meaningful opportunities
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-user-add-line text-primary text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Create Profile</h3>
+                    <p class="text-gray-600 text-sm">Sign up and build your professional profile with skills and experience</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-shield-check-line text-green-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Verify Skills</h3>
+                    <p class="text-gray-600 text-sm">Complete skill assessments and upload portfolio to get verified</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-links-line text-purple-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Get Matched</h3>
+                    <p class="text-gray-600 text-sm">Our algorithm matches you with relevant job opportunities</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-handshake-line text-orange-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Get Hired</h3>
+                    <p class="text-gray-600 text-sm">Connect with employers and secure your next project or position</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-trophy-line text-red-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Build Reputation</h3>
+                    <p class="text-gray-600 text-sm">Earn ratings and reviews to enhance your professional standing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Highlight -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Platform Features</h2>
+                <p class="text-xl text-gray-600">Everything you need to succeed in the garment industry</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-xl mb-4">
+                        <i class="ri-smartphone-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mobile-First Design</h3>
+                    <p class="text-gray-600">Optimized for mobile devices with intuitive touch interface and offline capabilities.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-xl mb-4">
+                        <i class="ri-secure-payment-line text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Secure Payments</h3>
+                    <p class="text-gray-600">Safe and reliable payment processing with escrow protection for both parties.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-xl mb-4">
+                        <i class="ri-customer-service-2-line text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Round-the-clock customer support in multiple languages to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Transform Your Career?</h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join thousands of garment workers and employers who trust StitchMatch for their professional needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-primary px-8 py-3 !rounded-button text-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+                    Start as Worker
+                </button>
+                <button class="bg-secondary text-white px-8 py-3 !rounded-button text-lg font-semibold hover:bg-amber-700 transition-colors whitespace-nowrap">
+                    Post a Job
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          
+                        </div>
+                         <img src="Images/Logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">StitchMatch</h1>
+                    </div>
+                    <p class="text-gray-400 mb-4">Where garment skills meet opportunity. Connecting talented workers with meaningful employment in the textile industry.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-facebook-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-twitter-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-linkedin-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-instagram-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Workers</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Create Profile</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Find Jobs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Skill Verification</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Portfolio Builder</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Post Jobs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Find Workers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Manage Hiring</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2024 StitchMatch. All rights reserved.</p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-gray-400 text-sm">Available in:</span>
+                    <span class="text-sm text-gray-300">English</span>
+                    <span class="text-sm text-gray-300">தமிழ்</span>
+                    <span class="text-sm text-gray-300">हिंदी</span>
+                    <span class="text-sm text-gray-300">বাংলা</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.md\\:hidden .ri-menu-line').parentElement;
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-3 hidden';
+            mobileMenu.innerHTML = `
+                <a href="#" class="block text-gray-700 hover:text-primary transition-colors py-2">Find Work</a>
+                <a href="#" class="block text-gray-700 hover:text-primary transition-colors py-2">Hire Talent</a>
+                <a href="#" class="block text-gray-700 hover:text-primary transition-colors py-2">How It Works</a>
+                <a href="#" class="block text-gray-700 hover:text-primary transition-colors py-2">Features</a>
+                <div class="pt-3 border-t border-gray-200">
+                    <a href="#" class="block text-gray-700 hover:text-primary transition-colors py-2">Sign In</a>
+                    <button class="w-full bg-primary text-white px-4 py-2 !rounded-button hover:bg-blue-600 transition-colors mt-2 whitespace-nowrap">Get Started</button>
+                </div>
+            `;
+            
+            menuButton.parentElement.parentElement.appendChild(mobileMenu);
+            
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = menuButton.querySelector('i');
+                icon.className = mobileMenu.classList.contains('hidden') ? 'ri-menu-line text-xl' : 'ri-close-line text-xl';
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="cta-buttons">
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButtons = document.querySelectorAll('button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.textContent.includes('Find Work') || this.textContent.includes('Start as Worker')) {
+                        console.log('Redirecting to worker registration...');
+                    } else if (this.textContent.includes('Hire Talent') || this.textContent.includes('Post a Job')) {
+                        console.log('Redirecting to employer registration...');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

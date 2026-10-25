@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StitchMatch - Where Garment Skills Meet Opportunity</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#8B7355'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Modern%20garment%20workshop%20with%20sewing%20machines%20and%20fabric%20rolls%20in%20soft%20natural%20lighting%2C%20beige%20and%20blue%20color%20palette%2C%20professional%20textile%20manufacturing%20environment%20with%20skilled%20workers%20crafting%20quality%20garments%2C%20clean%20minimalist%20background%20with%20fabric%20textures&width=1920&height=1080&seq=hero1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .fabric-texture {
+            background-image: url('https://readdy.ai/api/search-image?query=Subtle%20beige%20fabric%20texture%20with%20delicate%20thread%20patterns%2C%20soft%20cotton%20weave%20background%2C%20minimal%20and%20clean%20textile%20surface%20for%20web%20design&width=800&height=600&seq=texture1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-900">
+    <!-- Header -->
+       <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                    </div>
+                     <img src="Images/Logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">StitchMatch</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="Index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="CreateProfile.html" class="text-primary font-medium transition-colors">Find Work</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Hire Talent</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Features</a>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <a href="Signin.html"><button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">Sign In</button></a>
+                    <a href="CreateProfile.html"><button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">Get Started</button></a>
+                </div>
+                
+                <div class="md:hidden">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="bg-white rounded-xl shadow p-6">
+            <h1 class="text-2xl font-semibold">Create your worker profile</h1>
+            <p class="text-gray-600 mt-2">Build a profile employers can trust — add skills, portfolios, language support
+                and request verification badges.</p>
+
+            <form id="profileForm" class="mt-6 space-y-6" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700">Full name</label>
+                        <input id="fullName" name="fullName" required
+                            class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-2"
+                            placeholder="e.g., Meena Kumari">
+                        <p id="errName" class="text-red-600 text-sm mt-1" aria-live="polite"></p>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                        <input id="phone" name="phone" inputmode="tel"
+                            class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-2"
+                            placeholder="e.g., +91 98765 43210">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="location" class="block text-sm font-medium text-gray-700">Location (city /
+                        region)</label>
+                    <input id="location" name="location"
+                        class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-2"
+                        placeholder="e.g., Tiruppur, Tamil Nadu">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Skills</label>
+                    <div class="mt-2 flex gap-2 items-center">
+                        <input id="skillInput" type="text" class="rounded-md border-gray-200 p-2 flex-1"
+                            placeholder="Type a skill and press Enter (e.g., stitching, embroidery)">
+                        <button id="addSkill" type="button"
+                            class="bg-primary text-white px-4 py-2 rounded-md">Add</button>
+                    </div>
+                    <div id="skillsList" class="mt-3 flex flex-wrap gap-2"></div>
+                    <p class="text-sm text-gray-500 mt-2">Common: Stitching, Embroidery, Cutting, Finishing, Pattern
+                        Making</p>
+                    <p id="errSkills" class="text-red-600 text-sm mt-1" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <label for="experience" class="block text-sm font-medium text-gray-700">Experience & summary</label>
+                    <textarea id="experience" name="experience" rows="4"
+                        class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-2"
+                        placeholder="Briefly describe your experience, machines you use, and the types of garments you make..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Languages</label>
+                    <div class="mt-2 flex flex-wrap gap-3">
+                        <label class="inline-flex items-center"><input type="checkbox" value="English"
+                                class="mr-2 lang font-medium text-gray-700"> English</label>
+                        <label class="inline-flex items-center"><input type="checkbox" value="Tamil" class="mr-2 lang">
+                            தமிழ்</label>
+                        <label class="inline-flex items-center"><input type="checkbox" value="Hindi" class="mr-2 lang">
+                            हिंदी</label>
+                        <label class="inline-flex items-center"><input type="checkbox" value="Bengali"
+                                class="mr-2 lang"> বাংলা</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Portfolio uploads (photos/videos)</label>
+                    <p class="text-sm text-gray-500">Add up to 8 files. Images and short videos are supported
+                        (client-side preview only).</p>
+                    <input id="files" type="file" accept="image/*,video/*" multiple class="mt-2">
+                    <div id="preview" class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <input id="verifyRequest" type="checkbox" class="mt-1">
+                    <div>
+                        <label for="verifyRequest" class="font-medium">Request skill verification</label>
+                        <p class="text-sm text-gray-600">We will review your portfolio and may invite you for a short
+                            skills check to award a verification badge.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded-md">Save profile
+                        </button>
+                    <button id="resetBtn" type="button"
+                        class="border border-gray-200 px-4 py-2 rounded-md">Reset</button>
+                    <div id="formMsg" class="text-sm ml-2" aria-live="polite"></div>
+                </div>
+            </form>
+        </div>
+    </main>
+       <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          
+                        </div>
+                         <img src="Images/Logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">StitchMatch</h1>
+                    </div>
+                    <p class="text-gray-400 mb-4">Where garment skills meet opportunity. Connecting talented workers with meaningful employment in the textile industry.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-facebook-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-twitter-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-linkedin-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-instagram-fill text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Workers</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Create Profile</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Find Jobs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Skill Verification</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Portfolio Builder</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Post Jobs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Find Workers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Manage Hiring</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2024 StitchMatch. All rights reserved.</p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-gray-400 text-sm">Available in:</span>
+                    <span class="text-sm text-gray-300">English</span>
+                    <span class="text-sm text-gray-300">தமிழ்</span>
+                    <span class="text-sm text-gray-300">हिंदी</span>
+                    <span class="text-sm text-gray-300">বাংলা</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Demo client-side profile creation: preview uploads, manage skills, save to localStorage
+        (function () {
+            const skillInput = document.getElementById('skillInput');
+            const addSkillBtn = document.getElementById('addSkill');
+            const skillsList = document.getElementById('skillsList');
+            const errSkills = document.getElementById('errSkills');
+            const filesInput = document.getElementById('files');
+            const preview = document.getElementById('preview');
+            const form = document.getElementById('profileForm');
+            const formMsg = document.getElementById('formMsg');
+            const errName = document.getElementById('errName');
+
+            let skills = [];
+
+            function renderSkills() {
+                skillsList.innerHTML = '';
+                skills.forEach((s, idx) => {
+                    const chip = document.createElement('div');
+                    chip.className = 'chip flex items-center gap-2';
+                    chip.textContent = s;
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'ml-2 text-xs text-gray-600';
+                    btn.textContent = '✕';
+                    btn.addEventListener('click', () => { skills.splice(idx, 1); renderSkills(); });
+                    chip.appendChild(btn);
+                    skillsList.appendChild(chip);
+                });
+            }
+
+            function addSkillFromInput() {
+                const v = skillInput.value.trim();
+                if (!v) return;
+                if (skills.includes(v.toLowerCase())) { errSkills.textContent = 'Skill already added.'; return; }
+                errSkills.textContent = '';
+                skills.push(v);
+                skillInput.value = '';
+                renderSkills();
+            }
+
+            addSkillBtn.addEventListener('click', addSkillFromInput);
+            skillInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); addSkillFromInput(); } });
+
+            filesInput.addEventListener('change', function () {
+                preview.innerHTML = '';
+                const files = Array.from(this.files).slice(0, 8);
+                files.forEach(file => {
+                    const el = document.createElement(file.type.startsWith('image/') ? 'img' : 'video');
+                    el.className = 'w-full h-28 object-cover rounded';
+                    el.title = file.name;
+                    el.controls = file.type.startsWith('video/');
+                    const url = URL.createObjectURL(file);
+                    el.src = url;
+                    const holder = document.createElement('div');
+                    holder.className = 'rounded overflow-hidden shadow-sm bg-white p-1';
+                    holder.appendChild(el);
+                    preview.appendChild(holder);
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                formMsg.textContent = '';
+                errName.textContent = '';
+                if (!document.getElementById('fullName').value.trim()) { errName.textContent = 'Name is required.'; return; }
+                if (skills.length === 0) { errSkills.textContent = 'Please add at least one skill.'; return; }
+
+                // collect data
+                const data = {
+                    name: document.getElementById('fullName').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    location: document.getElementById('location').value.trim(),
+                    skills: skills.slice(),
+                    experience: document.getElementById('experience').value.trim(),
+                    languages: Array.from(document.querySelectorAll('.lang:checked')).map(n => n.value),
+                    verifyRequested: document.getElementById('verifyRequest').checked,
+                    createdAt: new Date().toISOString()
+                };
+
+                // store demo profiles in localStorage
+                const key = 'stitchmatch_demo_profiles';
+                const existing = JSON.parse(localStorage.getItem(key) || '[]');
+                existing.push(data);
+                localStorage.setItem(key, JSON.stringify(existing));
+
+                formMsg.style.color = '#065f46';
+                formMsg.textContent = 'Profile saved locally (demo). You can view your profile in the console or continue to sign in.';
+                console.log('Saved demo profile', data);
+            });
+
+            document.getElementById('resetBtn').addEventListener('click', function () {
+                form.reset(); skills = []; renderSkills(); preview.innerHTML = ''; formMsg.textContent = ''; errName.textContent = ''; errSkills.textContent = '';
+            });
+        })();
+    </script>
+</body>
+
+</html>
